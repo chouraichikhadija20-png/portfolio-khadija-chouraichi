@@ -1,0 +1,1042 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khadija Chouraichi - Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+        }
+
+        /* Header & Navigation */
+        header {
+            background: linear-gradient(135deg, #1e3a5f 0%, #2d5a7b 100%);
+            color: white;
+            padding: 2rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #ffd700;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #1e3a5f 0%, #2d5a7b 100%);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: #ffd700;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 0.8rem 2rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: #ffd700;
+            color: #1e3a5f;
+            font-weight: bold;
+        }
+
+        .btn-primary:hover {
+            background: #ffed4e;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: #1e3a5f;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        /* Section Titles */
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 3rem;
+            color: #1e3a5f;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: #ffd700;
+        }
+
+        /* About Section */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .profile-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .profile-img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #1e3a5f 0%, #2d5a7b 100%);
+            margin: 0 auto 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: white;
+        }
+
+        .contact-info {
+            margin-top: 1rem;
+            text-align: left;
+        }
+
+        .contact-info p {
+            margin: 0.5rem 0;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .about-text {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .about-text h3 {
+            color: #1e3a5f;
+            margin-bottom: 1rem;
+        }
+
+        .expertise-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .tag {
+            background: #1e3a5f;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+
+        /* Experience Section */
+        .experience-grid {
+            display: grid;
+            gap: 2rem;
+        }
+
+        .experience-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            border-left: 4px solid #ffd700;
+            transition: transform 0.3s;
+        }
+
+        .experience-card:hover {
+            transform: translateX(10px);
+        }
+
+        .exp-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .exp-title {
+            color: #1e3a5f;
+            font-size: 1.3rem;
+            font-weight: bold;
+        }
+
+        .exp-company {
+            color: #666;
+            font-size: 1.1rem;
+            margin-top: 0.3rem;
+        }
+
+        .exp-date {
+            background: #1e3a5f;
+            color: white;
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+
+        .exp-location {
+            color: #888;
+            margin-top: 0.5rem;
+        }
+
+        .achievements {
+            list-style: none;
+            margin-top: 1rem;
+        }
+
+        .achievements li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .achievements li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #ffd700;
+            font-weight: bold;
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-category {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .skill-category h3 {
+            color: #1e3a5f;
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+        }
+
+        .skill-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .skill-name {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .skill-bar {
+            height: 8px;
+            background: #e0e0e0;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .skill-progress {
+            height: 100%;
+            background: linear-gradient(90deg, #1e3a5f 0%, #ffd700 100%);
+            border-radius: 10px;
+            transition: width 1s ease;
+        }
+
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+        }
+
+        .project-header {
+            background: linear-gradient(135deg, #1e3a5f 0%, #2d5a7b 100%);
+            color: white;
+            padding: 2rem;
+            min-height: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+        }
+
+        .project-content {
+            padding: 2rem;
+        }
+
+        .project-title {
+            color: #1e3a5f;
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-meta {
+            color: #888;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .project-description {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .project-tag {
+            background: #f0f0f0;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            color: #666;
+        }
+
+        .project-details {
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        .project-details h4 {
+            color: #1e3a5f;
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-details ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .project-details li {
+            padding: 0.3rem 0;
+            padding-left: 1.2rem;
+            position: relative;
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        .project-details li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: #ffd700;
+        }
+
+        /* Education Section */
+        .education-timeline {
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .education-timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: #ffd700;
+        }
+
+        .education-item {
+            background: white;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            position: relative;
+        }
+
+        .education-item::before {
+            content: '';
+            position: absolute;
+            left: -2.5rem;
+            top: 2rem;
+            width: 12px;
+            height: 12px;
+            background: #ffd700;
+            border-radius: 50%;
+            border: 3px solid white;
+        }
+
+        .edu-degree {
+            color: #1e3a5f;
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .edu-school {
+            color: #666;
+            margin-bottom: 0.5rem;
+        }
+
+        .edu-date {
+            color: #888;
+            font-size: 0.9rem;
+        }
+
+        /* Contact Section */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .contact-info-box {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .contact-info-box h3 {
+            color: #1e3a5f;
+            margin-bottom: 1.5rem;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            background: #f9f9f9;
+            border-radius: 5px;
+        }
+
+        .info-icon {
+            width: 40px;
+            height: 40px;
+            background: #1e3a5f;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .contact-form {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #333;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: inherit;
+        }
+
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        /* Footer */
+        footer {
+            background: #1e3a5f;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .social-links a:hover {
+            background: #ffd700;
+            color: #1e3a5f;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .about-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .exp-header {
+                flex-direction: column;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.6s ease;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <header>
+        <nav>
+            <div class="logo">KHADIJA CHOURAICHI</div>
+            <ul class="nav-links">
+                <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#apropos">À propos</a></li>
+                <li><a href="#experience">Expériences</a></li>
+                <li><a href="#competences">Compétences</a></li>
+                <li><a href="#projets">Projets</a></li>
+                <li><a href="#formation">Formation</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="accueil" class="hero">
+        <div class="hero-content fade-in">
+            <h1>Khadija Chouraichi</h1>
+            <p class="hero-subtitle">Ingénieure de Formation & Digital Learning</p>
+            <p>Spécialiste en Pédagogie Innovante, Transformation Digitale & Management de la Qualité</p>
+            <div class="cta-buttons">
+                <a href="#contact" class="btn btn-primary">Me Contacter</a>
+                <a href="#projets" class="btn btn-secondary">Voir mes Projets</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="apropos" class="container">
+        <h2 class="section-title">À Propos</h2>
+        <div class="about-grid">
+            <div class="profile-card fade-in">
+                <div class="profile-img">KC</div>
+                <h3>Khadija Chouraichi</h3>
+                <p style="color: #666; margin-top: 0.5rem;">Future Ingénieure de Formation</p>
+                <div class="contact-info">
+                    <p>📧 chouraichikhadija20@gmail.com</p>
+                    <p>📱 0707974843</p>
+                    <p>📍 Settat, Maroc</p>
+                    <p>🌐 Mobilité: Casablanca, Rabat</p>
+                </div>
+            </div>
+            <div class="about-text fade-in">
+                <h3>Mon Profil</h3>
+                <p>Étudiante en Master Ingénierie de Formation et Digital Learning à l'ESEF Berrechid, je développe une <strong>triple expertise unique</strong> au croisement de la pédagogie innovante, de la transformation digitale et du management de la qualité.</p>
+                
+                <p style="margin-top: 1rem;">Passionnée par la conception de parcours d'apprentissage engageants, je maîtrise les modèles d'ingénierie pédagogique (ADDIE, SAM) et les outils de création e-learning (Articulate 360, Moodle). Ma formation initiale en Techniques d'Analyse et Contrôle Qualité me confère une rigueur méthodologique et une expertise en référentiels qualité (Qualiopi, ISO 21001, ISO 9001).</p>
+
+                <p style="margin-top: 1rem;">Je recherche actuellement un <strong>stage de fin d'études (6 mois)</strong> pour mettre mes compétences au service d'un projet de transformation pédagogique et qualité d'envergure.</p>
+
+                <h3 style="margin-top: 2rem;">Domaines d'Expertise</h3>
+                <div class="expertise-tags">
+                    <span class="tag">Ingénierie Pédagogique</span>
+                    <span class="tag">Digital Learning</span>
+                    <span class="tag">E-learning (ADDIE, SAM)</span>
+                    <span class="tag">LMS & Outils Auteurs</span>
+                    <span class="tag">Management Qualité</span>
+                    <span class="tag">Certifications (Qualiopi, ISO)</span>
+                    <span class="tag">Benchmark Stratégique</span>
+                    <span class="tag">Analyse des Besoins</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="container" style="background: white; padding: 4rem 2rem; margin-left: 0; margin-right: 0; max-width: 100%;">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <h2 class="section-title">Expériences Professionnelles</h2>
+            <div class="experience-grid">
+                <div class="experience-card fade-in">
+                    <div class="exp-header">
+                        <div>
+                            <div class="exp-title">Stagiaire – Ingénierie de Formation & Certification Qualité</div>
+                            <div class="exp-company">Welearn</div>
+                            <div class="exp-location">📍 Casablanca</div>
+                        </div>
+                        <div class="exp-date">Sept - Oct 2025</div>
+                    </div>
+                    <ul class="achievements">
+                        <li>Réalisation des certifications qualité pour organismes de formation (Qualiopi, ISO 21001, ISO 9001, CPD) avec création d'une <strong>matrice décisionnelle multicritères</strong> (coûts, délais, exigences)</li>
+                        <li><strong>Accompagnement de la qualification GIAC BTP</strong></li>
+                    </ul>
+                </div>
+
+                <div class="experience-card fade-in">
+                    <div class="exp-header">
+                        <div>
+                            <div class="exp-title">Stagiaire – Ingénierie Pédagogique Digitale</div>
+                            <div class="exp-company">Digital Learning Lab - Centre de Ressources Multimédia (OFPPT)</div>
+                            <div class="exp-location">📍 Casablanca</div>
+                        </div>
+                        <div class="exp-date">Juin - Juil 2025</div>
+                    </div>
+                    <ul class="achievements">
+                        <li>Participation aux <strong>étapes de scénarisation pédagogique</strong> pour la production de ressources didactiques numériques</li>
+                        <li><strong>Production et médiatisation de contenus</strong> : storyboarding, production vidéo, création de ressources interactives multimédia</li>
+                    </ul>
+                </div>
+
+                <div class="experience-card fade-in">
+                    <div class="exp-header">
+                        <div>
+                            <div class="exp-title">Stagiaire PFE – Contrôle Qualité & Analyse des Risques</div>
+                            <div class="exp-company">SEWS-CABIND Maroc</div>
+                            <div class="exp-location">📍 Berrechid</div>
+                        </div>
+                        <div class="exp-date">Avr - Juin 2024</div>
+                    </div>
+                    <ul class="achievements">
+                        <li>Travail sur un projet de fin d'étude basé sur l'<strong>application de l'AMDEC processus</strong> et des outils de qualité</li>
+                        <li>Détermination des <strong>modes de défaillances les plus critiques</strong> afin d'identifier les actions préventives et correctives</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projets" class="container">
+        <h2 class="section-title">Projets Académiques</h2>
+        <div class="projects-grid">
+            
+            <!-- Projet 1 : Formation Gestion du Temps -->
+            <div class="project-card fade-in">
+                <div class="project-header">
+                    ⏰
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">Formation Digitale : Gestion du Temps et des Priorités</h3>
+                    <p class="project-meta">📅 Novembre 2025 | 🎓 Master Digital Learning</p>
+                    
+                    <p class="project-description">
+                        Conception d'un dispositif complet de formation en ligne visant à développer les compétences en gestion du temps et priorisation des tâches dans un environnement de travail hybride, en utilisant le modèle ADDIE.
+                    </p>
+
+                    <div class="project-details">
+                        <h4>🎯 Objectifs</h4>
+                        <ul>
+                            <li>Former les collaborateurs à la matrice d'Eisenhower</li>
+                            <li>Maîtriser la technique Pomodoro</li>
+                            <li>Réduire le stress lié à la charge de travail</li>
+                            <li>Améliorer la productivité en mode hybride</li>
+                        </ul>
+                    </div>
+
+                    <div class="project-details">
+                        <h4>🛠️ Réalisations</h4>
+                        <ul>
+                            <li>Analyse des besoins (questionnaires, entretiens)</li>
+                            <li>Conception d'outils pédagogiques</li>
+                            <li>Benchmark de solutions LMS</li>
+                            <li>Rapport complet (15-20 pages)</li>
+                        </ul>
+                    </div>
+
+                    <div class="project-tags">
+                        <span class="project-tag">ADDIE</span>
+                        <span class="project-tag">Gestion du Temps</span>
+                        <span class="project-tag">E-learning</span>
+                        <span class="project-tag">Analyse des Besoins</span>
+                        <span class="project-tag">Matrice Eisenhower</span>
+                        <span class="project-tag">Pomodoro</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Projet 2 : Étude Comparative Fiches de Poste -->
+            <div class="project-card fade-in">
+                <div class="project-header">
+                    📊
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">Étude Comparative : Fiches de Poste en Ingénierie de Formation</h3>
+                    <p class="project-meta">📅 2024-2025 | 🎓 Master Digital Learning</p>
+                    
+                    <p class="project-description">
+                        Analyse comparative approfondie des fiches de poste en ingénierie de formation et digital learning, basée sur les référentiels professionnels de l'UM6P et de YOOL, visant à identifier les compétences clés du métier.
+                    </p>
+
+                    <div class="project-details">
+                        <h4>🎯 Objectifs</h4>
+                        <ul>
+                            <li>Identifier les compétences transversales du métier</li>
+                            <li>Comparer les approches UM6P vs YOOL</li>
+                            <li>Cartographier les profils professionnels</li>
+                            <li>Proposer un référentiel de compétences</li>
+                        </ul>
+                    </div>
+
+                    <div class="project-details">
+                        <h4>🔍 Méthodologie</h4>
+                        <ul>
+                            <li>Analyse documentaire des référentiels</li>
+                            <li>Étude comparative multicritères</li>
+                            <li>Identification des gaps de compétences</li>
+                            <li>Synthèse et recommandations</li>
+                        </ul>
+                    </div>
+
+                    <div class="project-details">
+                        <h4>📈 Résultats Clés</h4>
+                        <ul>
+                            <li>Mapping complet des compétences</li>
+                            <li>Tableau comparatif détaillé</li>
+                            <li>Recommandations pour la formation</li>
+                        </ul>
+                    </div>
+
+                    <div class="project-tags">
+                        <span class="project-tag">Analyse Comparative</span>
+                        <span class="project-tag">Référentiels Métier</span>
+                        <span class="project-tag">UM6P</span>
+                        <span class="project-tag">YOOL</span>
+                        <span class="project-tag">Compétences</span>
+                        <span class="project-tag">Ingénierie Formation</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Projet 3 : Stage Welearn (peut être présenté comme projet) -->
+            <div class="project-card fade-in">
+                <div class="project-header">
+                    ✅
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">Benchmark International : Certifications Qualité pour Organismes de Formation</h3>
+                    <p class="project-meta">📅 Sept-Oct 2025 | 🏢 Welearn - Stage</p>
+                    
+                    <p class="project-description">
+                        Réalisation d'un benchmark stratégique des certifications qualité internationales pour orienter la stratégie qualité d'un organisme de formation et accompagnement de la qualification GIAC BTP.
+                    </p>
+
+                    <div class="project-details">
+                        <h4>📋 Missions Réalisées</h4>
+                        <ul>
+                            <li>Benchmark de certifications : Qualiopi, ISO 21001, ISO 9001, CPD, RNCP</li>
+                            <li>Création d'une matrice décisionnelle multicritères</li>
+                            <li>Analyse coûts, délais, exigences, ROI</li>
+                            <li>Accompagnement qualification GIAC BTP</li>
+                            <li>Constitution de dossiers de conformité</li>
+                        </ul>
+                    </div>
+
+                    <div class="project-details">
+                        <h4>🎯 Livrables</h4>
+                        <ul>
+                            <li>Rapport de benchmark complet</li>
+                            <li>Matrice décisionnelle</li>
+                            <li>Feuille de route qualité</li>
+                            <li>Dossier GIAC BTP complet</li>
+                        </ul>
+                    </div>
+
+                    <div class="project-tags">
+                        <span class="project-tag">Qualiopi</span>
+                        <span class="project-tag">ISO 21001</span>
+                        <span class="project-tag">ISO 9001</span>
+                        <span class="project-tag">GIAC BTP</span>
+                        <span class="project-tag">Benchmark</span>
+                        <span class="project-tag">Management Qualité</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="competences" class="container">
+        <h2 class="section-title">Compétences</h2>
+        <div class="skills-grid">
+            <div class="skill-category fade-in">
+                <h3>💻 Digital Learning & Ingénierie Pédagogique</h3>
+                <div class="skill-item">
+                    <div class="skill-name">
+                        <span>Modèles ADDIE & SAM</span>
+                        <span>90%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 90%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">
+                        <span>Articulate 360 (Storyline, Rise)</span>
+                        <span>75%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 75%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">
+                        <span>LMS Moodle</span>
+                        <span>80%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 80%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">
+                        <span>Scénarisation & Storyboarding</span>
+                        <span>85%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 85%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">
+                        <span>Canva & Design Visuel</span>
+                        <span>80%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 80%"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="skill-category fade-in">
+                <h3>✅ Management de la Qualité</h3>
+                <div class="skill-item">
+                    <div class="skill-name">
+                        <span>Référentiels Qualiopi & ISO 21001</span>
+                        <span>85%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 85%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">
+                        <span>ISO 9001 & GIAC BTP</span>
+                        <span>75%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 75%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">
+                        <span>AMDEC & Outils Qualité</span>
+                        <span>80%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 80%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">
+                        <span>Benchmark & Études de Faisabilité</span>
+                        <span>90%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 90%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">
+                        <span>Audit & Mise en Conformité</span>
+                        <span>75%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 75%"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="skill-category fade-in">
+                <h3>🛠️ Outils & Technologies</h3>
+                <div class="skill-item">
+                    <div class="skill-name">
+                        <span>Microsoft Office (Excel, PowerPoint, Word)</span>
+                        <span>90%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 90%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">
+                        <span>Outils Collaboratifs (Teams, Zoom)</span>
+                        <span>85%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 85%"></div>
+                    </div>
+                </div>
+                
